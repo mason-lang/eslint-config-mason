@@ -1,20 +1,10 @@
 module.exports = {
 	extends: 'eslint:recommended',
-	ecmaFeatures: {
-		arrowFunctions: true,
-		blockBindings: true,
-		classes: true,
-		defaultParams: true,
-		destructuring: true,
-		forOf: true,
-		generators: true,
-		modules: true,
-		objectLiteralShorthandMethods: true,
-		objectLiteralShortandProperties: true,
-		restParams: true,
-		spread: true,
-		templateStrings: true
+	parserOptions: {
+		ecmaVersion: 6,
+		sourceType: 'module'
 	},
+	env: {es6: true},
 	globals: {console: true, describe: true, it: true, module: true, require: true},
 	// Ordered like in http://eslint.org/docs/rules/
 	rules: {
@@ -64,7 +54,7 @@ module.exports = {
 		'no-shadow-restricted-names': 1,
 		'no-undef-init': 1,
 		'no-undef': 1,
-		'no-unused-vars': [1, {'argsIgnorePattern': '^_'}],
+		'no-unused-vars': [1, {args: 'all', 'argsIgnorePattern': '^_'}],
 
 		// Stylistic Issues
 		'array-bracket-spacing': 1,
